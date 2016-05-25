@@ -1,0 +1,4 @@
+---
+vault_name : 'vault_{{vault_ver}}_{{vault_platform}}'
+vault_zip : '{{vault_name}}.zip'
+vault_url : '{{vault_mirror}}/{{vault_ver}}/{{vault_zip}}'

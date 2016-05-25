@@ -1,0 +1,30 @@
+---
+- name: download vault...
+  get_url: >-
+    url={{vault_url}}
+    dest=/tmp/{{vault_zip}}
+    owner=root
+    group=root
+    mode=0644
+
+- name: make install dir
+  file: >-
+    path={{vault_install_dir}}/{{vault_name}}
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+    
+- name: unarchive vault...
+  unarchive: >-
+    src=/tmp/{{vault_zip}}
+    dest={{vault_install_dir}}/{{vault_name}}
+    creates={{vault_install_dir}}/{{vault_name}}/vault
+
+- name: link vault
+  file: >-
+    src={{vault_install_dir}}/{{vault_name}}/vault
+    dest={{vault_install_dir}}/vault
+    state=link
+    force=yes
+
