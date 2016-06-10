@@ -1,5 +1,5 @@
 ---
 vault_mirror: 'https://releases.hashicorp.com/vault'
-vault_ver : '0.5.2'
+vault_ver : '0.5.3'
 vault_platform : 'linux_amd64'
 vault_install_dir : '/usr/local/bin'
