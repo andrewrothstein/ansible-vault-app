@@ -1,15 +1,15 @@
 ---
-- name: download vault...
+- name: downloading vault-centric application...
   get_url: >-
-    url={{vault_url}}
-    dest=/tmp/{{vault_zip}}
+    url={{vault_app_url}}
+    dest=/tmp/{{vault_app_zip}}
     owner=root
     group=root
     mode=0644
 
 - name: make install dir
   file: >-
-    path={{vault_install_dir}}/{{vault_name}}
+    path={{vault_app_install_dir}}/{{vault_app_name}}
     state=directory
     owner=root
     group=root
@@ -17,14 +17,15 @@
     
 - name: unarchive vault...
   unarchive: >-
-    src=/tmp/{{vault_zip}}
-    dest={{vault_install_dir}}/{{vault_name}}
-    creates={{vault_install_dir}}/{{vault_name}}/vault
+    copy=no
+    src=/tmp/{{vault_app_zip}}
+    dest={{vault_app_install_dir}}/{{vault_app_name}}
+    creates={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
 
 - name: link vault
   file: >-
-    src={{vault_install_dir}}/{{vault_name}}/vault
-    dest={{vault_install_dir}}/vault
+    src={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
+    dest={{vault_app_install_dir}}/{{vault_app}}
     state=link
     force=yes
 
