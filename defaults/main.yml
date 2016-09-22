@@ -4,5 +4,7 @@ vault_app_platform : 'linux_amd64'
 vault_app_install_dir : '/usr/local/bin'
 
 # specify the application and version with vars...
-#vault_app : 'vault-ssh-helper'
+#vault_app : vault-ssh-helper
 #vault_app_ver : '0.1.2'
+#vault_app: vault
+#vault_app_ver: '0.6.1'
