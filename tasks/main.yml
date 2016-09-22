@@ -1,21 +1,23 @@
 ---
 - name: downloading vault-centric application
+  become: yes
+  become_user: root
   get_url: >-
     url={{vault_app_url}}
     dest=/tmp/{{vault_app_zip}}
-    owner=root
-    group=root
     mode=0644
 
 - name: making installation directory
+  become: yes
+  become_user: root
   file: >-
     path={{vault_app_install_dir}}/{{vault_app_name}}
     state=directory
-    owner=root
-    group=root
     mode=0755
     
 - name: unarchive vault-centric application
+  become: yes
+  become_user: root
   unarchive: >-
     copy=no
     src=/tmp/{{vault_app_zip}}
@@ -23,9 +25,11 @@
     creates={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
 
 - name: link vault-centric application
+  become: yes
+  become_user: root
   file: >-
     src={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
     dest={{vault_app_install_dir}}/{{vault_app}}
     state=link
-    force=yes
+
 
