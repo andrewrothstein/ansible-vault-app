@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Andrew Rothstein
+e  author: Andrew Rothstein
   description: hashicorp vault role
   company: BlackRock
   license:
@@ -20,5 +20,8 @@ galaxy_info:
   galaxy_tags:
     - development
 
-dependencies: []
+dependencies:
+  - role: andrewrothstein.unarchive-deps
+    version: v1.0.3
+
   
