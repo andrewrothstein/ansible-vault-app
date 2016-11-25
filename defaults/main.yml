@@ -8,6 +8,8 @@ vault_app_install_dir : '/usr/local/bin'
 ##example to install vault-ssh-helper
 #vault_app : vault-ssh-helper
 #vault_app_ver : '0.1.2'
+#vault_app_checksum: sha256:bfe5efd19ea5e0f6b45e60f9631620314a8cbe8e829c6fb3ba7ca6875dc6b37b
 
 #vault_app: vault
-#vault_app_ver: '0.6.1'
+#vault_app_ver: '0.6.2'
+#vault_app_checksum: sha256:91432c812b1264306f8d1ecf7dd237c3d7a8b2b6aebf4f887e487c4e7f69338c

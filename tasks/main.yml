@@ -5,6 +5,7 @@
   get_url: >-
     url={{vault_app_url}}
     dest=/tmp/{{vault_app_zip}}
+    checksum={{vault_app_checksum}}
     mode=0644
 
 - name: making installation directory

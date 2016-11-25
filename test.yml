@@ -2,3 +2,7 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+      vault_app : vault-ssh-helper
+      vault_app_ver : '0.1.2'
+      vault_app_checksum: sha256:bfe5efd19ea5e0f6b45e60f9631620314a8cbe8e829c6fb3ba7ca6875dc6b37b
+
