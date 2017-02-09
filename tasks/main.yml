@@ -1,36 +1,36 @@
 ---
 - name: downloading vault-centric application
-  become: yes
+  become: '{{vault_app_privilege_escalate}}'
   become_user: root
-  get_url: >-
-    url={{vault_app_url}}
-    dest=/tmp/{{vault_app_zip}}
-    checksum={{vault_app_checksum}}
-    mode=0644
+  get_url:
+    url: '{{vault_app_url}}'
+    dest: /tmp/{{vault_app_zip}}
+    checksum: '{{vault_app_checksum}}'
+    mode: '0644'
 
 - name: making installation directory
-  become: yes
+  become: '{{vault_app_privilege_escalate}}'
   become_user: root
-  file: >-
-    path={{vault_app_install_dir}}/{{vault_app_name}}
-    state=directory
-    mode=0755
+  file:
+    path: '{{vault_app_install_dir}}/{{vault_app_name}}'
+    state: directory
+    mode: '0755'
     
 - name: unarchive vault-centric application
-  become: yes
+  become: '{{vault_app_privilege_escalate}}'
   become_user: root
-  unarchive: >-
-    copy=no
-    src=/tmp/{{vault_app_zip}}
-    dest={{vault_app_install_dir}}/{{vault_app_name}}
-    creates={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
+  unarchive:
+    copy: no
+    src: /tmp/{{vault_app_zip}}
+    dest: '{{vault_app_install_dir}}/{{vault_app_name}}'
+    creates: '{{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}'
 
 - name: link vault-centric application
-  become: yes
+  become: '{{vault_app_privilege_escalate}}'
   become_user: root
-  file: >-
-    src={{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}
-    dest={{vault_app_install_dir}}/{{vault_app}}
-    state=link
+  file:
+    src: '{{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}'
+    dest: '{{vault_app_install_dir}}/{{vault_app}}'
+    state: link
 
 
