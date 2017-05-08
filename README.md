@@ -6,26 +6,28 @@ Role for installing Hashicorp's Vault related applications.
 Requirements
 ------------
 
-See [meta/main.yml]
+See [meta/main.yml](meta/main.yml)
 
 Role Variables
 --------------
 
-See [defaults/main.yml]
+See [defaults/main.yml](defaults/main.yml)
 
 Dependencies
 ------------
 
-See [meta/main.yml]
+See [meta/main.yml](meta/main.yml)
 
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-         - role: andrewrothstein.vault-app
-	   vault_app: vault-ssh-helper
-	   vault_app_ver: '0.1.2'
+```yml
+- hosts: servers
+  roles:
+    - role: andrewrothstein.vault-app
+      vault_app: vault-ssh-helper
+	  vault_app_ver: '0.1.2'
+```
 
 License
 -------
@@ -35,4 +37,4 @@ MIT
 Author Information
 ------------------
 
-Andrew Rothstein andrew.rothstein@gmail.com
+Andrew Rothstein <andrew.rothstein@gmail.com>
