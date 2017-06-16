@@ -33,4 +33,10 @@
     dest: '{{vault_app_install_dir}}/{{vault_app}}'
     state: link
 
-
+- name: cleanup...
+  become: '{{vault_app_privilege_escalate}}'
+  become_user: root
+  when: vault_app_cleanup
+  file:
+    path: '/tmp/{{vault_app_zip}}'
+    state: absent

@@ -4,6 +4,7 @@
     - role: '{{playbook_dir}}'
       vault_app: vault
       vault_app_ver: '0.6.5'
+      vaule_app_cleanup: True
       vault_app_checksums:
         darwin_386: sha256:553d65782a853777e5c954bea262bb6f81ac956e5cedb9e03fd88d07a685d90f
         darwin_amd64: sha256:abad5d79c3b81e07405c00997ec5d646e171eaab644a3c35354a03eb2d43c8e9
@@ -21,4 +22,3 @@
         solaris_amd64: sha256:a037cfd49e2441982c7cc126b4d5ec0929134399fa955cf4752341c6a6d854d8
         windows_386: sha256:cfc5a9a7beecdf7e7b8424d706b5f39c1d757f329e6ec490fb627d58f147d51e
         windows_amd64: sha256:4ef04179efba3233f1b1fb91c6702a5c7896b1e7d0d7398500a9c0729e81edf7
-
