@@ -1,5 +1,6 @@
 andrewrothstein.vault-app
 =========================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-vault-app.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-vault-app)
 
 Role for installing Hashicorp's Vault related applications.
 
