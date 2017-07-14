@@ -20,7 +20,7 @@
   become: '{{vault_app_privilege_escalate}}'
   become_user: root
   unarchive:
-    copy: no
+    remote_src: no
     src: /tmp/{{vault_app_zip}}
     dest: '{{vault_app_install_dir}}/{{vault_app_name}}'
     creates: '{{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}'
