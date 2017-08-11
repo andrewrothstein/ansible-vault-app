@@ -12,7 +12,7 @@
   become: '{{vault_app_privilege_escalate}}'
   become_user: root
   file:
-    path: '{{vault_app_install_dir}}/{{vault_app_name}}'
+    path: '{{vault_app_install_subdir}}'
     state: directory
     mode: '0755'
     
@@ -22,15 +22,15 @@
   unarchive:
     remote_src: yes
     src: /tmp/{{vault_app_zip}}
-    dest: '{{vault_app_install_dir}}/{{vault_app_name}}'
-    creates: '{{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}'
+    dest: '{{vault_app_install_subdir}}'
+    creates: '{{vault_app_install_subsubdir}}'
 
 - name: link vault-centric application
   become: '{{vault_app_privilege_escalate}}'
   become_user: root
   file:
-    src: '{{vault_app_install_dir}}/{{vault_app_name}}/{{vault_app}}'
-    dest: '{{vault_app_install_dir}}/{{vault_app}}'
+    src: '{{vault_app_install_subsubdir}}'
+    dest: '{{vault_app_install_subdir}}'
     state: link
 
 - name: cleanup...
