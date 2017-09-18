@@ -37,6 +37,7 @@ test:
                 --upstreamapp docker-ansible-role
                 --write ${OS}
                 --build ${OS}
+                --push ${OS}
 
           EHD
       :

@@ -45,3 +45,4 @@ script:
     --pull ${OS}
     --write ${OS}
     --build ${OS}
+    --push ${OS}
