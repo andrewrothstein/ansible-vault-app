@@ -46,4 +46,3 @@
     src: '{{vault_app_install_subsubdir}}'
     dest: '{{vault_app_install_linkdir}}'
     state: link
-
