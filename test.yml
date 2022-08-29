@@ -1,7 +1,7 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: '{{ playbook_dir }}'
       vault_app: vault
       vault_app_ver: '0.6.5'
       vault_app_checksums:
